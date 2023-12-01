@@ -1,0 +1,20 @@
+
+#samples_grid {
+    display: grid;
+    grid-template-rows: 500px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.sample {
+    background: #fff;
+}
+    
+
+.sample-title {
+
+}
+
+.sample-description {
+
+}

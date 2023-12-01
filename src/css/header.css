@@ -1,0 +1,132 @@
+  @font-face {
+    font-family: "Josefin-Regular";
+    src: url("../fonts/JosefinSans/static/JosefinSans-Regular.ttf") format("truetype");
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    background-color: #111;
+    z-index: 100;
+    width: 100%;
+    height: 75px;
+    opacity: 75%;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  header button {
+    color: #fff;
+  }
+
+  /*wrapper/whole area*/
+  #header_content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    padding: 12px 15px 4px 15px;
+  }
+
+  /*content area*/
+  #header_content_main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: "Josefin-Regular";
+    font-size: 18px;
+    padding: 0 0 0 15px;
+  }
+
+  .links-info-list {
+    display: inherit;
+    width: 50%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .links-info-list a:hover{
+    transition: 100ms linear 0s;
+    color: #ddddaa;
+  }
+
+  .link {
+    display: inherit;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+
+  .link * { /*set a fancy gap for each element*/
+    margin: 5px;
+  }
+
+  .link img { /*icons*/
+    max-width: 40px;
+    max-height:40px;
+  }
+
+  .link-home {
+    min-width: 75px;
+    justify-content: center;
+    flex: 0 0 10%;
+  }
+
+  .link-home img {
+    max-width: 35px;
+    max-height: 35px;
+    padding-bottom: 1px;
+  }
+
+  .link-info-linkedin img {
+    padding-bottom: 6px;
+  }
+
+  .links-contacts-list {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items:  end;
+    justify-content: space-evenly;
+    font-family: "Josefin-Regular";
+    font-size: 14px;
+  }
+
+  /*gradients*/
+  #header_separator {
+    position: relative;
+    bottom: 2.5px;
+    width: 99%;
+    height: 2px;
+    border-radius: 10px;
+    margin: 0 auto;
+    background: linear-gradient(90deg, #ffcc99, #99ff99, #9999ff, #99ff99, #ffcc99);
+    background-size: 200% auto;
+    animation: bgGradientAnimation 5s infinite linear;
+  }
+  
+  @keyframes bgGradientAnimation {
+    to {
+      background-position: 200% center;
+    }
+  }
+
+  header a:hover {
+    background: linear-gradient(90deg, #fff 50%, #ff0 60%, #ff0 70%, #fff 80%);
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: linkGradientAnimation 3s ease infinite;
+  }
+  
+  @keyframes linkGradientAnimation {
+    to {
+      background-position: 200% center;
+    }
+  }

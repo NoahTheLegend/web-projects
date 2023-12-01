@@ -1,115 +1,12 @@
   @font-face {
     font-family: "Josefin-Regular";
-    src: url("fonts/JosefinSans/static/JosefinSans-Regular.ttf") format("truetype");
-  }
-
-/*main*/
-  header {
-    position: sticky;
-    top: 0;
-    background-color: #111;
-    z-index: 100;
-    width: 100%;
-    height: 75px;
-    color: #fff;
-  }
-
-  #header_content {
-    display: flex;
-    padding: 12px 15px;
-    font-family: "Josefin-Regular";
-    font-size: 18px;
-  }
-
-  #header_separator {
-    position: relative;
-    bottom: 2.5px;
-    width: 99%;
-    height: 2px;
-    border-radius: 50%;
-    margin: auto;
-    background-color: #fff;
-  }
-
-  footer {
-    width: 100%;
-    height: 75px;
-    padding: 15px;
-    background: #111;
-    color: #fff;
+    src: url("src/fonts/JosefinSans/static/JosefinSans-Regular.ttf") format("truetype");
   }
   
-  #footer_content {
-    height: 100%;
-  }
-
-  #footer_separator {
-    position: relative;
-    top: 8px;
-    width: 99%;
-    height: 2px;
-    border-radius: 50%;
-    margin: auto;
-    background-color: #fff;
-  }
-
-  .content {
-    position: relative;
-    min-height: 1000px;
+  body {
     background-image: url("src/pictures/biege-cream-background.jpg");
     background-size: cover;
+    backdrop-filter: blur(5px);
+    max-width: 1920px;
+    margin: auto;
   }
-
-/*header links*/
-
-  .links-info-list {
-    display: inherit;
-    width: 50%;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .links-info-list a:hover{
-    transition: 100ms linear 0s;
-    color: #ddddaa;
-  }
-
-  .link {
-    display: inherit;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .link * { /*set a fancy gap for each element*/
-    margin: 5px;
-  }
-
-  .link img { /*icons*/
-    max-width: 40px;
-    max-height:40px;
-  }
-
-  .link span {
-    padding: 6px 0 0 0;
-  }
-
-  .link-info-linkedin {
-    padding-top: 6px;
-  }
-
-  .link-info-linkedin img {
-    padding-bottom: 6px;
-  }
-
-  .links-contacts-list {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    align-items:  end;
-    justify-content: space-evenly;
-    
-    font-family: "Josefin-Regular";
-    font-size: 14px;
-  }
-  /**/
