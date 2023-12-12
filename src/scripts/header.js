@@ -19,7 +19,12 @@ export const get_header = () => {
     linksInfoList.className = "links-info-list";
 
     const homePage = createLink("index.html", "");
-    createIcon(homePage, "home-icon.svg", "home-icon.svg")
+
+    const homeIcon = document.createElement("img");
+    homeIcon.src = "src/svg/home-icon.svg";
+    homeIcon.alt = "404";
+    homePage.insertBefore(homeIcon, homePage.querySelector("span"));
+
     linksInfoList.appendChild(homePage);
 
     const githubLink = createLink("https://github.com/NoahTheLegend", "GitHub");
@@ -56,14 +61,6 @@ const createLink = (href, text) => {
 
     return link;
 };
-
-const createIcon = (elem, imgSrc, imgAlt) => {
-    const image = document.createElement("img");
-    image.src = `src/svg/${imgSrc}`;
-    image.alt = imgAlt;
-
-    elem.insertBefore(image, elem.querySelector("span"));
-}
 
 const createContact = (label, href, text) => {
     const contactTxt = document.createElement("button");

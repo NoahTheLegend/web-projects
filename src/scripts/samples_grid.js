@@ -6,7 +6,12 @@ export const get_samples_grid = () => {
     const content = document.createElement("div");
     content.id = "samples_grid";
 
-    // requires nodejs to work
+    if (typeof process == "undefined" || !process.version) {
+        content.textContent = "Requires Node.js";
+        return content;
+    }
+    
+    console.log("Node.js version: "+process.version);
 
     return content;
 }
