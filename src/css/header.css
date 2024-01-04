@@ -1,4 +1,7 @@
-  @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+  @font-face {
+    font-family: "Josefin-Regular";
+    src: url("../fonts/JosefinSans/static/JosefinSans-Regular.ttf") format("truetype");
+  }
 
   header {
     position: sticky;
@@ -32,7 +35,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-family: "Raleway", sans-serif;
+    font-family: "Josefin-Regular";
     font-size: 18px;
     padding: 0 0 0 15px;
   }
@@ -89,7 +92,7 @@
     flex-direction: column;
     align-items:  end;
     justify-content: space-evenly;
-    font-family: "Raleway", sans-serif;
+    font-family: "Josefin-Regular";
     font-size: 14px;
   }
 
@@ -101,7 +104,7 @@
     height: 2px;
     border-radius: 10px;
     margin: 0 auto;
-    background: linear-gradient(90deg, #ff0099, #99ff99, #5555ff, #99ff99, #ff0099);
+    background: linear-gradient(90deg, #ffcc99, #99ff99, #9999ff, #99ff99, #ffcc99);
     background-size: 200% auto;
     animation: bgGradientAnimation 5s infinite linear;
   }
