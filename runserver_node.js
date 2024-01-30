@@ -5,12 +5,15 @@ const path = require("path");
 const server = http.createServer((req, res) => {
   const filePath = path.join(__dirname, req.url === "/" ? "index.html" : req.url);
   const extname = path.extname(filePath);
-
+  
   const contentType = {
     ".html": "text/html",
     ".js": "text/javascript",
     ".css": "text/css",
     ".ttf": "font/ttf",
+    ".jpg": "image/jpeg",
+    ".png": "image/png",
+    ".gif": "image/gif",
   };
 
   fs.readFile(filePath, "utf8", (err, content) => {
