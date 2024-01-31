@@ -3,11 +3,9 @@ import { connect_style } from "./style_connector.js";
 export const get_header = () => {
     connect_style("header.css");
 
-    // wrapper
     const headerContent = document.createElement("div");
     headerContent.id = "header_content";
 
-    // content
     const headerContentMain = document.createElement("div");
     headerContentMain.id = "header_content_main";
 
@@ -17,7 +15,6 @@ export const get_header = () => {
     headerContent.appendChild(headerContentMain);
     headerContent.appendChild(bottomSeparator);
 
-    // links
     const linksInfoList = document.createElement("ul");
     linksInfoList.className = "links-info-list";
 
@@ -44,7 +41,6 @@ export const get_header = () => {
     const linksContactsList = document.createElement("div");
     linksContactsList.className = "links-contacts-list";
 
-    // apply
     headerContentMain.appendChild(linksContactsList);
 
     linksContactsList.appendChild(createContact("todo: add popup for these E-mail", "https://gmail.com", "ienystell@gmail.com"));
