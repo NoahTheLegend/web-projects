@@ -1,6 +1,6 @@
 
 export const connect_style = (style) => {
-    const path = `css/${style}`;
+    const path = `public/css/${style}`;
 
     var styleLink = document.createElement("link");
     styleLink.rel = "stylesheet";

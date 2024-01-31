@@ -24,7 +24,7 @@ export const get_header = () => {
     const homePage = createLink("index.html", "");
 
     const homeIcon = document.createElement("img");
-    homeIcon.src = "svg/home-icon.svg";
+    homeIcon.src = "public/svg/home-icon.svg";
     homeIcon.alt = "404";
     homePage.insertBefore(homeIcon, homePage.querySelector("span"));
 
