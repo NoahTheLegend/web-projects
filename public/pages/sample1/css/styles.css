@@ -164,7 +164,7 @@ header {
   text-decoration-color: #fff;
   min-width: 100%;
   height: 750px;
-  background: url(../public/images/BG.png) no-repeat center;
+  background: url(../images/BG.png) no-repeat center;
   padding: 50px 80px 0 80px;
 }
 @media (max-width: 1280px) {
@@ -201,7 +201,7 @@ header {
   font-weight: 600;
 }
 .logo::before {
-  content: url(../public/images/dartLogo.png);
+  content: url(../images/dartLogo.png);
   position: absolute;
   margin-top: -2px;
 }
@@ -396,7 +396,7 @@ header {
   max-height: 320px;
   border-radius: 5px;
   border: solid 1px #061e37;
-  background: url(../public/images/BGproject.png) center no-repeat;
+  background: url(../images/BGproject.png) center no-repeat;
   background-size: 690px auto;
   position: relative;
   z-index: 1;
@@ -436,7 +436,7 @@ header {
   cursor: pointer;
 }
 .video-button:before {
-  content: url(../public/images/play_arrow.png);
+  content: url(../images/play_arrow.png);
   margin-left: -5px;
   position: relative;
   top: 41%;
@@ -540,21 +540,21 @@ header {
   width: 68px;
   height: 70px;
   margin: 0 auto;
-  background: url(../public/images/iconCalendar.png) no-repeat;
+  background: url(../images/iconCalendar.png) no-repeat;
 }
 
 .icon_management__image {
   width: 58px;
   height: 80px;
   margin: 0 auto;
-  background: url(../public/images/iconManagement.png) no-repeat;
+  background: url(../images/iconManagement.png) no-repeat;
 }
 
 .icon_collective__image {
   width: 68px;
   height: 71px;
   margin: 0 auto;
-  background: url(../public/images/iconCollective.png) no-repeat;
+  background: url(../images/iconCollective.png) no-repeat;
 }
 
 .eNu__button {
@@ -614,7 +614,7 @@ header {
   background-color: #80d8ff;
 }
 .cyan-icon:before {
-  content: url(../public/images/iconBusiness.png);
+  content: url(../images/iconBusiness.png);
   position: absolute;
   margin-left: -122px;
   margin-bottom: -3px;
@@ -624,7 +624,7 @@ header {
   background-color: #82b1ff;
 }
 .blue-icon:before {
-  content: url(../public/images/iconDownloads.png);
+  content: url(../images/iconDownloads.png);
   position: absolute;
   margin-left: -125px;
   margin-bottom: -3px;
@@ -634,7 +634,7 @@ header {
   background-color: #b388ff;
 }
 .purple-icon:before {
-  content: url(../public/images/iconUser.png);
+  content: url(../images/iconUser.png);
   position: absolute;
   margin-left: -125px;
   margin-bottom: -3px;
@@ -644,7 +644,7 @@ header {
   background-color: #ea80fc;
 }
 .pink-icon:before {
-  content: url(../public/images/iconDownloadsPink.png);
+  content: url(../images/iconDownloadsPink.png);
   position: absolute;
   margin-left: -125px;
   margin-bottom: -3px;
@@ -740,7 +740,7 @@ header {
 }
 
 .open-arrow:after {
-  content: url(../public/images/iconArrowDown.png);
+  content: url(../images/iconArrowDown.png);
   position: absolute;
 }
 
@@ -748,7 +748,7 @@ header {
   order: 1;
 }
 .ss__statistics:before {
-  content: url(../public/images/iconTrading.png);
+  content: url(../images/iconTrading.png);
   position: absolute;
 }
 
@@ -756,7 +756,7 @@ header {
   order: 2;
 }
 .ss__inbox:before {
-  content: url(../public/images/iconMail.png);
+  content: url(../images/iconMail.png);
   position: absolute;
 }
 
@@ -764,7 +764,7 @@ header {
   order: 3;
 }
 .ss__team:before {
-  content: url(../public/images/iconGroup.png);
+  content: url(../images/iconGroup.png);
   position: absolute;
   margin-top: 1px;
 }
@@ -773,7 +773,7 @@ header {
   order: 4;
 }
 .ss__settings:before {
-  content: url(../public/images/iconSettings.png);
+  content: url(../images/iconSettings.png);
   position: absolute;
   margin-top: -2px;
 }
@@ -782,7 +782,7 @@ header {
   order: 5;
 }
 .ss__feed:before {
-  content: url(../public/images/iconRssFeed.png);
+  content: url(../images/iconRssFeed.png);
   position: absolute;
   margin-top: -1px;
 }
@@ -793,7 +793,7 @@ header {
   width: 100%;
   min-width: 0;
   height: 564px;
-  background: url(../public/images/BGTestimonals.png) no-repeat center;
+  background: url(../images/BGTestimonals.png) no-repeat center;
   padding: 40px 80px;
 }
 @media (max-width: 980px) {
@@ -869,25 +869,25 @@ header {
 }
 
 .testimonals__comments #JohnDoe:before {
-  content: url(../public/images/doe.png);
+  content: url(../images/doe.png);
   position: absolute;
   top: 47.5px;
   left: -110px;
 }
 .testimonals__comments #Khalessi:before {
-  content: url(../public/images/lessi.png);
+  content: url(../images/lessi.png);
   position: absolute;
   top: 47.5px;
   left: -110px;
 }
 .testimonals__comments #Doe:before {
-  content: url(../public/images/doe.png);
+  content: url(../images/doe.png);
   position: absolute;
   top: 47.5px;
   left: -110px;
 }
 .testimonals__comments #Lessi:before {
-  content: url(../public/images/lessi.png);
+  content: url(../images/lessi.png);
   position: absolute;
   top: 47.5px;
   left: -110px;
@@ -1043,11 +1043,11 @@ header {
 }
 .testimonals__comments .slick-prev {
   margin-bottom: 32px;
-  background: url(../public/images/arrowUp.png) no-repeat center;
+  background: url(../images/arrowUp.png) no-repeat center;
 }
 .testimonals__comments .slick-next {
   margin-top: 17px;
-  background: url(../public/images/arrowDown.png) no-repeat center;
+  background: url(../images/arrowDown.png) no-repeat center;
 }
 .team {
   display: flex;
@@ -1148,19 +1148,19 @@ header {
 }
 
 .team__sophie-turner-copy {
-  background-image: url(../public/images/SophieTurner.png);
+  background-image: url(../images/SophieTurner.png);
 }
 
 .team__sophie-turner-one {
-  background-image: url(../public/images/SophieTurner.png);
+  background-image: url(../images/SophieTurner.png);
 }
 
 .team__sophie-turner-two {
-  background-image: url(../public/images/SophieTurner.png);
+  background-image: url(../images/SophieTurner.png);
 }
 
 .team__sophie-turner-three {
-  background-image: url(../public/images/SophieTurner.png);
+  background-image: url(../images/SophieTurner.png);
 }
 
 .team__slider-text {
@@ -1213,27 +1213,27 @@ header {
 .text-block .icon-social-row .twitter-icon {
   width: 18px;
   height: 16px;
-  background: url(../public/images/twitterlight.png) no-repeat;
+  background: url(../images/twitterlight.png) no-repeat;
 }
 .text-block .icon-social-row .facebook-icon {
   width: 10px;
   height: 18px;
-  background: url(../public/images/facebooklight.png) no-repeat;
+  background: url(../images/facebooklight.png) no-repeat;
 }
 .text-block .icon-social-row .in-icon {
   width: 21px;
   height: 20px;
-  background: url(../public/images/inlight.png) no-repeat;
+  background: url(../images/inlight.png) no-repeat;
 }
 .text-block .icon-social-row .basketball-icon {
   width: 18px;
   height: 18px;
-  background: url(../public/images/bblight.png) no-repeat;
+  background: url(../images/bblight.png) no-repeat;
 }
 .text-block .icon-social-row .be-icon {
   width: 18px;
   height: 12px;
-  background: url(../public/images/belight.png) no-repeat;
+  background: url(../images/belight.png) no-repeat;
 }
 
 .contact-us {
@@ -1346,27 +1346,27 @@ footer {
 .bottom-row .icon-social-row .facebook-icon {
   width: 19px;
   height: 18px;
-  background: url(../public/images/facebook.png);
+  background: url(../images/facebook.png);
 }
 .bottom-row .icon-social-row .twitter-icon {
   width: 17px;
   height: 16px;
-  background: url(../public/images/twitter.png);
+  background: url(../images/twitter.png);
 }
 .bottom-row .icon-social-row .in-icon {
   width: 19px;
   height: 18px;
-  background: url(../public/images/in.png);
+  background: url(../images/in.png);
 }
 .bottom-row .icon-social-row .basketball-icon {
   width: 19px;
   height: 18px;
-  background: url(../public/images/basketball.png);
+  background: url(../images/basketball.png);
 }
 .bottom-row .icon-social-row .be-icon {
   width: 24px;
   height: 16px;
-  background: url(../public/images/be.png);
+  background: url(../images/be.png);
 }
 
 .links-row {
