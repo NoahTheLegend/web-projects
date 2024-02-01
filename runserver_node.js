@@ -1,32 +1,31 @@
-const http = require("http");
-const fs = require("fs");
-const path = require("path");
+const http = require('http');
+const port = 3000;
+const express = require('express');
+const app = express();
 
-const server = http.createServer((req, res) => {
-  const filePath = path.join(__dirname, req.url === "/" ? "index.html" : req.url);
-  const extname = path.extname(filePath);
+const path = require('path');
 
-  const contentType = {
-    ".html": "text/html",
-    ".js": "text/javascript",
-    ".css": "text/css",
-    ".ttf": "font/ttf",
-  };
+app.use(express.static(path.join(__dirname, 'public')));
 
-  fs.readFile(filePath, "utf8", (err, content) => {
-    if (err) {
-      res.writeHead(500, { "Content-Type": "text/plain" });
-      res.end("Internal Server Error");
-      console.error(err);
-      return;
-    }
+const pages = {
+    'index': ['/', '/home', '/index'],
+    'bio': ['/bio']
+};
 
-    res.writeHead(200, { "Content-Type": contentType[extname] || "text/plain" });
-    res.end(content);
-  });
+Object.entries(pages).forEach(([page, urls]) => {
+    urls.forEach(url => {
+        app.get(url, (req, res) => {
+            res.sendFile(path.join(__dirname, 'public', `${page}.html`));
+        });
+    });
 });
 
-const port = 3000;
-server.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}/`);
+app.use((req, res) => {
+    res.status(404).sendFile(path.join(__dirname, 'public', 'error.html'));
+});
+
+const server = http.createServer(app);
+
+server.listen(port, 'localhost', (error) => {
+    error ? console.log(error) : console.log(`Listening on port ${port}`);
 });
