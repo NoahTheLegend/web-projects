@@ -1,5 +1,5 @@
 
-export const connect_style = (style) => {
+export const connectStyle = (style) => {
     const path = `css/${style}`;
 
     var styleLink = document.createElement("link");
