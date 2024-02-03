@@ -31,7 +31,7 @@ export const get_header = () => {
 
             // home
             {
-                const homePage = createLink("index.html", "Home").addClass(link_prefix+"home");
+                const homePage = createLink("index.html", "").addClass(link_prefix+"home");
                 const homeIcon = document.createElement("img");
                 homeIcon.src = "svg/home-icon.svg";
                 homeIcon.alt = "404";
