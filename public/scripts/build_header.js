@@ -51,7 +51,7 @@ export const get_header = () => {
             }
 
             {
-                const bioLink = createLink("pages/bio/index.html", "Bio").addClass(link_prefix+"bio");
+                const bioLink = createLink("bio.html", "Bio").addClass(link_prefix+"bio");
                 linksInfoList.appendChild(bioLink);
             }
             
