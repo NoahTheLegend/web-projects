@@ -22,7 +22,7 @@
   }
 
   /*wrapper/whole area*/
-  #header_content {
+  #header_container {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -31,7 +31,7 @@
   }
 
   /*content area*/
-  #header_content_main {
+  #header_container_main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -70,19 +70,19 @@
     max-height:40px;
   }
 
-  .link-home {
+  .link_home {
     min-width: 75px;
     justify-content: center;
     flex: 0 0 10%;
   }
 
-  .link-home img {
+  .link_home img {
     max-width: 35px;
     max-height: 35px;
     padding-bottom: 1px;
   }
 
-  .link-info-linkedin img {
+  .link_linkedin img {
     padding-bottom: 6px;
   }
 
