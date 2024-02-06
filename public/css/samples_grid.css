@@ -6,15 +6,28 @@
     grid-gap: 20px;
 }
 
+.samples-area {
+    width: 100%;
+    max-width:  1920px;
+    padding: 0 15px;
+}
+
+.samples-area__nav {
+
+}
+
+.samples-area__grid {
+    
+}
+
 .sample {
     background: #fff;
 }
     
-
-.sample-title {
+.sample__title {
 
 }
 
-.sample-description {
+.sample__description {
 
 }

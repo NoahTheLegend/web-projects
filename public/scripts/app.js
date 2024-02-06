@@ -1,4 +1,4 @@
 
-import { get_samples_grid } from "./samples_grid.js";
+import { set_samples_grid } from "./samples_grid.js";
 
-document.getElementById("content").appendChild(get_samples_grid());
+let samplesCollection = set_samples_grid(); // returns array of existing pages 
