@@ -32,7 +32,7 @@ const header = document.createElement("header");
 {
     // header container
     const headerContent = document.createElement("div");
-    headerContent.id = "header_container";
+    headerContent.id = "header__container";
 
     //apply
     header.appendChild(headerContent);
@@ -40,11 +40,11 @@ const header = document.createElement("header");
     {
         // header content
         const headerContentMain = document.createElement("div");
-        headerContentMain.id = "header_container_main";
+        headerContentMain.id = "header__container_content";
 
         // decorator
         const bottomSeparator = document.createElement("div");
-        bottomSeparator.id = "header_separator";
+        bottomSeparator.id = "header-separator";
 
         // apply
         headerContent.appendChild(headerContentMain);
@@ -54,7 +54,7 @@ const header = document.createElement("header");
         {
             // links
             const linksInfoList = document.createElement("ul");
-            linksInfoList.className = "links-info-list";
+            linksInfoList.className = "links-info__list";
             let link_prefix = "link_";
 
             // home
@@ -92,7 +92,7 @@ const header = document.createElement("header");
 
             // contacts
             const linksContactsList = document.createElement("div");
-            linksContactsList.className = "links-contacts-list";
+            linksContactsList.className = "links-contacts__list";
             headerContentMain.appendChild(linksContactsList);
 
             //apply
