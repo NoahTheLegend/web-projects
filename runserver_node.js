@@ -2,8 +2,9 @@ const http = require('http');
 const port = 3000;
 const express = require('express');
 const app = express();
-// causes an error
-const get_pages = require('./scripts/register_pages.js');
+
+const {registerPages, pagesCollection} = require('./public/scripts/register_pages.js');
+registerPages;
 
 const path = require('path');
 
@@ -18,12 +19,11 @@ app.use((req, res) => {
     res.status(404).sendFile(path.join(__dirname, 'public', 'error.html'));
 });
 
-// required class (singleton) returns cached object
-// then we iterate through each and update `pages` object with static routes
-let pages_collection = new get_pages();
-pages_collection.forEach((index, route) => {
-    pages.index = [route];
+console.log(pagesCollection);
+pagesCollection.forEach((route, index) => {
+    pagesCollection.index = route;
 });
+
 
 Object.entries(pages).forEach(([page, urls]) => {
     urls.forEach(url => {
