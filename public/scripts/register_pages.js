@@ -61,10 +61,14 @@ async function registerConfig(filePath) {
         const pageInfo = JSON.parse(data);
 
         let root = path.relative("./", path.dirname(filePath));
-        pageInfo.index = root+"\\"+pageInfo.index;
-        pageInfo.preview = root+"\\"+pageInfo.preview;
-        
-        //console.log("Storing:\n"+filePath);
+
+        // reverse slashes for client and remove default static directory from path
+        root = root.replace(/\\/g, '/').replace("public/", "");
+
+        pageInfo.index = path.posix.join(root, pageInfo.index);
+        pageInfo.preview = path.posix.join(root, pageInfo.preview);
+
+        // console.log("Storing:\n"+filePath);
         pagesCollection.push(pageInfo);
     } catch (error) {
         console.error('An error occurred:', error);
