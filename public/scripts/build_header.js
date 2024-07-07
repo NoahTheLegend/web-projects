@@ -45,13 +45,8 @@ const header = document.createElement("header");
         const headerContentMain = document.createElement("div");
         headerContentMain.id = "header__container_content";
 
-        // decorator
-        const bottomSeparator = document.createElement("div");
-        bottomSeparator.id = "header-separator";
-
         // apply
         headerContent.appendChild(headerContentMain);
-        headerContent.appendChild(bottomSeparator);
 
         // router
         {

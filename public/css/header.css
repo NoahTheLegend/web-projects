@@ -86,36 +86,3 @@
     font-family: "Josefin-Regular";
     font-size: 18px;
   }
-
-  /*gradients*/
-  /*
-  #header-separator {
-    position: relative;
-    bottom: 2.5px;
-    max-width: 1920px;
-    width: 99%;
-    height: 2px;
-    border-radius: 10px;
-    margin: 0 auto;
-    background: linear-gradient(90deg,#99ff99,#9999ff, #ff4499, #9999ff, #99ff99);
-    background-size: 200% auto;
-    animation: bgGradientAnimation 5s infinite linear;
-  }
-  
-  @keyframes bgGradientAnimation {
-    to {
-      background-position: 200% center;
-    }
-  }
-
-  header a:hover {
-    transition: 150ms ease-out;
-    color: #fafa9f;
-  }
-  
-  @keyframes linkGradientAnimation {
-    to {
-      background-position: 200% center;
-    }
-  }
-  */

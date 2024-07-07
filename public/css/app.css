@@ -36,6 +36,9 @@
   }
 
   .sample {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 350px;
     height: 100%;
@@ -46,17 +49,144 @@
     overflow: hidden;
   }
 
+  @keyframes boxShadowAnimation {
+    0% {
+      box-shadow: 
+        inset 0 0 15px rgba(255, 0, 0, 0.5),
+        inset 0 0 15px rgba(255, 127, 0, 0.5),
+        inset 0 0 15px rgba(255, 255, 0, 0.33),
+        inset 0 0 15px rgba(0, 255, 0, 0.5),
+        inset 0 0 15px rgba(0, 0, 255, 0.85),
+        inset 0 0 15px rgba(75, 0, 130, 0.5),
+        inset 0 0 15px rgba(143, 0, 255, 0.5);
+    }
+    14% {
+      box-shadow: 
+        inset 0 0 15px rgba(255, 127, 0, 0.5),
+        inset 0 0 15px rgba(255, 255, 0, 0.33),
+        inset 0 0 15px rgba(0, 255, 0, 0.5),
+        inset 0 0 15px rgba(0, 0, 255, 0.85),
+        inset 0 0 15px rgba(75, 0, 130, 0.5),
+        inset 0 0 15px rgba(143, 0, 255, 0.5),
+        inset 0 0 15px rgba(255, 0, 0, 0.5);
+    }
+    28% {
+      box-shadow: 
+        inset 0 0 15px rgba(255, 255, 0, 0.33),
+        inset 0 0 15px rgba(0, 255, 0, 0.5),
+        inset 0 0 15px rgba(0, 0, 255, 0.85),
+        inset 0 0 15px rgba(75, 0, 130, 0.5),
+        inset 0 0 15px rgba(143, 0, 255, 0.5),
+        inset 0 0 15px rgba(255, 0, 0, 0.5),
+        inset 0 0 15px rgba(255, 127, 0, 0.5);
+    }
+    42% {
+      box-shadow: 
+        inset 0 0 15px rgba(0, 255, 0, 0.5),
+        inset 0 0 15px rgba(0, 0, 255, 0.85),
+        inset 0 0 15px rgba(75, 0, 130, 0.5),
+        inset 0 0 15px rgba(143, 0, 255, 0.5),
+        inset 0 0 15px rgba(255, 0, 0, 0.5),
+        inset 0 0 15px rgba(255, 127, 0, 0.5),
+        inset 0 0 15px rgba(255, 255, 0, 0.33);
+    }
+    57% {
+      box-shadow: 
+        inset 0 0 15px rgba(0, 0, 255, 0.5),
+        inset 0 0 15px rgba(75, 0, 130, 0.5),
+        inset 0 0 15px rgba(143, 0, 255, 0.5),
+        inset 0 0 15px rgba(255, 0, 0, 0.5),
+        inset 0 0 15px rgba(255, 127, 0, 0.5),
+        inset 0 0 15px rgba(255, 255, 0, 0.33),
+        inset 0 0 15px rgba(0, 255, 0, 0.5);
+    }
+    71% {
+      box-shadow: 
+        inset 0 0 15px rgba(75, 0, 130, 0.5),
+        inset 0 0 15px rgba(143, 0, 255, 0.5),
+        inset 0 0 15px rgba(255, 0, 0, 0.5),
+        inset 0 0 15px rgba(255, 127, 0, 0.5),
+        inset 0 0 15px rgba(255, 255, 0, 0.33),
+        inset 0 0 15px rgba(0, 255, 0, 0.5),
+        inset 0 0 15px rgba(0, 0, 255, 0.85);
+    }
+    85% {
+      box-shadow: 
+        inset 0 0 15px rgba(143, 0, 255, 0.5),
+        inset 0 0 15px rgba(255, 0, 0, 0.5),
+        inset 0 0 15px rgba(255, 127, 0, 0.5),
+        inset 0 0 15px rgba(255, 255, 0, 0.33),
+        inset 0 0 15px rgba(0, 255, 0, 0.5),
+        inset 0 0 15px rgba(0, 0, 255, 0.85),
+        inset 0 0 15px rgba(75, 0, 130, 0.5);
+    }
+    100% {
+      box-shadow: 
+        inset 0 0 15px rgba(255, 0, 0, 0.5),
+        inset 0 0 15px rgba(255, 127, 0, 0.5),
+        inset 0 0 15px rgba(255, 255, 0, 0.33),
+        inset 0 0 15px rgba(0, 255, 0, 0.5),
+        inset 0 0 15px rgba(0, 0, 255, 0.85),
+        inset 0 0 15px rgba(75, 0, 130, 0.5),
+        inset 0 0 15px rgba(143, 0, 255, 0.5);
+    }
+  }
+  
+  .sample__body {
+    position: relative;
+    background-size: 100%;
+    box-shadow: 
+      inset 0 0 15px rgba(0, 0, 0, 0.33),
+      inset 0 0 15px rgba(0, 0, 0, 0.33),
+      inset 0 0 15px rgba(0, 0, 0, 0.33),
+      inset 0 0 15px rgba(0, 0, 0, 0.33);
+      
+    transition: box-shadow 0.25s ease-out, background-size 1s ease-out;
+  }
+
+  .sample__body:hover {
+    background-size: 125%;
+  }
+  
+  .sample__body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: 
+      inset 0 0 15px rgba(255, 0, 0, 0.5),
+      inset 0 0 15px rgba(255, 127, 0, 0.5),
+      inset 0 0 15px rgba(255, 255, 0, 0.5),
+      inset 0 0 15px rgba(0, 255, 0, 0.5),
+      inset 0 0 15px rgba(0, 0, 255, 0.5),
+      inset 0 0 15px rgba(75, 0, 130, 0.5),
+      inset 0 0 15px rgba(143, 0, 255, 0.5);
+    opacity: 0;
+    transition: opacity 0.25s ease-out;
+    animation: boxShadowAnimation 2s infinite linear;
+  }
+  
+  .sample__body:hover::before {
+    opacity: 1;
+  }  
+
+  .sample div {
+    width: 100%;
+    height: 100%;
+  }
+
   .sample__head {
     display: flex;
     width: 100%;
     height: 10%;
     padding: 8px;
-    border: 1px #ccc solid;
+    border-top: 1px #ccc solid;
     align-items: center;
     justify-content: center;
     color: #000;
     font-size: 16px;
-    border-radius: var(--card_border-radius) var(--card_border-radius) 0px 0px;
   }
 
   .switcher {
