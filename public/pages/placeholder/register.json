@@ -1,0 +1,6 @@
+{
+    "name": "Calculator (floating widget)",
+    "description": "Solid arithmetic calculator in an independent window",
+    "preview": "sample_card.png",
+    "index": "calculator_preview.html" 
+}

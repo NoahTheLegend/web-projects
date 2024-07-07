@@ -5,11 +5,14 @@ const createLink = (href, text) => {
     const link = document.createElement("a");
     link.href = href;
     link.className = `link`;
+    
+    if (text != "")
+    {
+        const span = document.createElement("span");
+        span.textContent = text;
 
-    const span = document.createElement("span");
-    span.textContent = text;
-
-    link.appendChild(span);
+        link.appendChild(span);
+    }
 
     return link;
 };
@@ -90,16 +93,47 @@ const header = document.createElement("header");
             // apply
             headerContentMain.appendChild(linksInfoList);
 
-            // contacts
+            // contacts pop-up
             const linksContactsList = document.createElement("div");
             linksContactsList.className = "links-contacts__list";
             headerContentMain.appendChild(linksContactsList);
+            
+            const contacts = document.createElement("div");
+            {
+                contacts.className = "switcher";
 
-            //apply
-            linksContactsList.appendChild(createContact("todo: add popup for these E-mail", "https://gmail.com", "ienystell@gmail.com"));
-            linksContactsList.appendChild(createContact("Discord", "https://discordapp.com/users/431830392635392022", "noahthelegend"));
+                const contactsLabelText = document.createElement("span");
+                contactsLabelText.textContent = "Contacts"
+                contactsLabelText.className = "switcher__label-text";
+
+                const contactsPopUpContainer = document.createElement("div");
+                contactsPopUpContainer.className = "popUp";
+
+                contactsLabelText.addEventListener("click", (event) => {
+                    switchStateContacts(contactsPopUpContainer);
+                });
+                
+                // apply
+                contacts.appendChild(contactsLabelText);
+                contacts.appendChild(contactsPopUpContainer);
+
+                contactsPopUpContainer.appendChild(createContact("E-mail", "https://gmail.com", "ienystell.work@gmail.com"));
+                contactsPopUpContainer.appendChild(createContact("Discord", "https://discordapp.com/users/431830392635392022", "noahthelegend"));
+            }
+
+            // apply
+            linksContactsList.appendChild(contacts);
         }
     }
+}
+
+let state_contacts_list = false;
+
+function switchStateContacts(elem) {
+    if (elem == null) return;
+    state_contacts_list = !state_contacts_list;
+    //console.log(state_contacts_list);
+    elem.style.visibility = state_contacts_list ? "visible" : "hidden";
 }
 
 document.body.prepend(header);

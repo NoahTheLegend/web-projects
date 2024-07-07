@@ -2,66 +2,73 @@ const fs = require('fs');
 const path = require('path');
 
 let pagesCollection = [];
-//!!!!!!!!!!!!!!!!!code is running async'ally, so result is empty, needs a fix
 
-function registerPages()
-{
-    let dir_path = path.join(path.dirname(__dirname), 'pages');
-    fs.readdirSync(dir_path).forEach(file => {          // read pages/ directory
-        dir_path = path.join(dir_path, file);
+async function registerPages() {
+    await fetchPages();
+
+    //console.log("Registering:\n"+pagesCollection);
+
+    pagesCollection.forEach((route, index) => {
+        pagesCollection.index = route;
+    });
+}
+
+async function getPages() {
+    return pagesCollection;
+}
+
+async function fetchPages() { 
+    try {
+        const dir_path = path.join(path.dirname(__dirname), 'pages');
+        const files = await fs.promises.readdir(dir_path);
         
-        let hasEntry = false;
-        if (fs.statSync(dir_path).isDirectory()) {      // if there are other directories in pages/
-            hasEntry = true;
-            path.join(dir_path, path.basename(dir_path));
+        for (const file of files) {
+            const file_path = path.join(dir_path, file);
+            const stats = await fs.promises.stat(file_path);
+
+            //console.log("Fetching:\n"+file_path);
+            
+            if (stats.isDirectory()) {
+                await searchConfig(file_path);
+            }
         }
+    } catch (error) {
+        console.error('An error occurred:', error);
+    }
+}
+
+async function searchConfig(dir_path) {
+    try {
+        const files = await fs.promises.readdir(dir_path);
         
-        if (hasEntry) {
-            searchConfig(dir_path);                     // read pages/directory/
+        for (const file of files) {
+            const filePath = path.join(dir_path, file);
+            const stats = await fs.promises.stat(filePath);
+            const filename = path.basename(filePath);
+            
+            if (!stats.isDirectory() && filename === "register.json") {
+                await registerConfig(filePath);
+            }
         }
-    });
+    } catch (error) {
+        console.error('An error occurred:', error);
+    }
 }
 
-function searchConfig(dir_path) {
-    fs.readdirSync(dir_path).forEach(file => {
-        const filePath = path.join(dir_path, file);
-        const filename = path.basename(filePath);
-                                                        // if file is not a directory and is "register.json"
-        if (!fs.statSync(filePath).isDirectory() && filename === "register.json") {
-            registerConfig(filePath);
-        }
-    });
+async function registerConfig(filePath) {
+    try {
+        const data = await fs.promises.readFile(filePath, 'utf8');
+        const pageInfo = JSON.parse(data);
+
+        let root = path.relative("./", path.dirname(filePath));
+        pageInfo.index = root+"\\"+pageInfo.index;
+        pageInfo.preview = root+"\\"+pageInfo.preview;
+        
+        //console.log("Storing:\n"+filePath);
+        pagesCollection.push(pageInfo);
+    } catch (error) {
+        console.error('An error occurred:', error);
+    }
 }
 
-function registerConfig(filePath) {
-    parseConfig(filePath, (error, pageInfo) => {   // try parse file into object
-        if (error) {
-            console.error('An error occurred:', error);
-            return;
-        }
-
-        pagesCollection.push(pageInfo);            // then store it
-    });
-}
-
-function parseConfig(filePath, callback) {
-    fs.readFile(filePath, 'utf8', (err, data) => {
-        if (err) {
-            console.error('Can not read file: ', err);
-            callback(err, null);
-            return;
-        }
-    
-        try {
-            const pageInfo = JSON.parse(data);
-            callback(null, pageInfo);
-        } catch (parseError) {
-            console.error('Could not parse JSON: ', parseError);
-            callback(parseError, null);
-        }
-    });
-}
-
-console.log(pagesCollection);
-module.exports = {registerPages: registerPages(),
-                  pagesCollection: pagesCollection};
+module.exports = {registerPages, getPages};

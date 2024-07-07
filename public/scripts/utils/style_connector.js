@@ -8,7 +8,7 @@ export const connectStyle = (style) => {
     styleLink.href = path;
 
     try {
-        console.log("Connecting style "+path);
+        //console.log("Connecting style "+path);
         document.head.appendChild(styleLink);
     } catch (error) {
         console.error("Error while adding the style:", error);
